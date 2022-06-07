@@ -25,4 +25,3 @@ const USERS = [
         usersID: 5
     },
 ]
-
