@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import Submit from './log-in-comps/Submit'
+// import Submit from './log-in-comps/Submit'
+import Submit from '../log-in-comps/Submit';
 
 export default function LogIn(){
     const usenavigate = useNavigate();
