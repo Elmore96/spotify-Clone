@@ -1,0 +1,34 @@
+.container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+.image{
+    background-size: cover;
+    position: relative;
+    height: 13rem;
+    width: 22rem;
+}
+
+.title{
+    height: 3rem;
+}
+  
+.card{
+    display: grid;
+    justify-content: center;
+    border: 1px solid brown;
+    width: 22rem;
+    height: 20rem;
+    margin: 1rem;
+    position: relative;
+}
+
+.search{
+    height: 2rem;
+    width: fit-content;
+    margin-left: 2rem;
+}

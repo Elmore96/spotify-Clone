@@ -1,5 +1,7 @@
 import React, {  useState } from 'react'
+import { Link } from 'react-router-dom';
 import Header from '../Header';
+import './Home.css'
 
 export default function Home() {
   
@@ -26,14 +28,25 @@ export default function Home() {
 
   return (
     <div>
-      <header>
-        <label>blaaa</label>
-        <input type='text' onChange={(e)=>setSerch(e.target.value)}/>
-        <button onClick={Serching}>click</button>
+      <header className='search'>
+        <label style={{fontSize: '1.5rem', marginTop: '-0.2rem', marginRight: '0.4rem'}}>search</label>
+        <input type='text' style={{height:'1.5rem', fontSize: '1.3rem', fontFamily: 'serif'}} onChange={(e)=>setSerch(e.target.value)}/>
+        <button style={{fontSize:'1.3rem', marginLeft: '0.4rem' }} onClick={Serching}>click</button>
       </header>
+      <div className='container'>
       {main.map(v =>{
-        return (<div>{v.thumbnail.url}</div>)
+      let views = (v.views.toString().length > 6)? v.views.toLocaleString().slice(-0, -8) + ' M' : 
+      (v.views.toString().length > 3)? v.views.toLocaleString().slice(-0, -4) + ' K' : v.views.toLocaleString() ;
+        let title = (v.title.length > 35)? `${v.title.slice(0, 35)}...`: v.title;
+
+        return (<div className='card'><a href={v.url}>
+          <div className='title'>{title}</div>
+          <div className='image' style={{backgroundImage:`url(${v.thumbnail.url})`, backgroundSize: 'cover'}} ></div>
+          <div>views: {views}</div>
+          </a>
+          </div>)
       })}
+      </div>
     </div>
   )
 }

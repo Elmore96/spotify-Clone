@@ -43,12 +43,18 @@ export default function Submit({func}) {
     }
 
     return (
-        <div className="container">
-            <label>User Name</label>
-            <input type='text' id='user' onChange={(e) => setUser({ name: e.target.value, password: User.password })}></input>
-            <label>Password</label>
-            <input type='text' id='password' onChange={(e) => setUser({ name: User.name, password: e.target.value })} ></input>
-            <button onClick={()=>func(check(),user)}>submmit </button>
+        <div className="submit">
+            <div className="sub-inputs">
+                <input type='text' required='required' onChange={(e) => setUser({ name: e.target.value, password: User.password })}></input>
+                <span>User Name</span>
+            </div>
+            <div className="sub-inputs">
+                <input type='text' required='required' onChange={(e) => setUser({ name: User.name, password: e.target.value })} ></input>
+                <span>Password</span>
+            </div>
+            <div className="sub-inputs">
+                <input type='button' value='submmit' style={{height:'3.4rem'}} onClick={()=>func(check(),user)}></input>
+            </div>
         </div>
     )
 }

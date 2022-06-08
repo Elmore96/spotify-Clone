@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-// import Submit from './log-in-comps/Submit'
 import Submit from '../log-in-comps/Submit';
+import './Log-in.css'
 
 export default function LogIn(){
     const usenavigate = useNavigate();
@@ -22,11 +22,15 @@ export default function LogIn(){
     }
 
     return(
-        <div>
-            <div>Log In</div>
+        <div className='log-page'>
+            <div className="center">
+            <h1><u>Log In</u></h1>
             <Submit func={enter} ></Submit>
-            <div>Create User</div>
-            <Submit func={creatUser}></Submit>
+            </div>
+            <div className="center">
+            <h1><u>Create User</u></h1>
+            <Submit  func={creatUser}></Submit>
+            </div>
         </div>
     )
 }
