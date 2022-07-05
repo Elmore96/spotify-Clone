@@ -3,20 +3,13 @@ import { useContext, useEffect, useState } from "react"
 import { Context } from "../Context"
 
 export default function Submit({creatUser }) {
+    const
+
+
     const { user, setuser } = useContext(Context)
     const [users, setUsers] = useState([]);
 
-    async function componentDidMount() {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: User.email, password: User.password })
-        };
-        const response = await fetch('http://localhost:3002/api/users/login', requestOptions);
-        const data = await response.json();
-        console.log(data)
-    }
-
+   
     const [User, setUser] = useState({ email: '', password: '' })
     function check() {
 
