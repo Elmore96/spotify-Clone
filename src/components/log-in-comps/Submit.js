@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import { Context } from "../Context"
 
 export default function Submit({creatUser }) {
-    const
+    
 
 
     const { user, setuser } = useContext(Context)
