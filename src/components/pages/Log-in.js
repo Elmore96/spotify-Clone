@@ -29,7 +29,7 @@ export default function LogIn(){
             </div>
             <div className="center">
             <h1><u>Create User</u></h1>
-            <Submit  func={creatUser}></Submit>
+            <Submit  creatUser={creatUser}></Submit>
             </div>
         </div>
     )

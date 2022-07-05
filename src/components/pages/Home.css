@@ -19,6 +19,7 @@
   
 .card{
     display: grid;
+    grid-template-rows: repeat(1,auto);
     justify-content: center;
     border: 1px solid brown;
     width: 22rem;
@@ -31,4 +32,8 @@
     height: 2rem;
     width: fit-content;
     margin-left: 2rem;
+}
+
+.song{
+    
 }
