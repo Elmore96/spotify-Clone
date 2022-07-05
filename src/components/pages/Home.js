@@ -15,6 +15,7 @@ export default function Home() {
     const options = {
       method: 'GET',
       headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')} `,
         'X-RapidAPI-Host': 'simple-youtube-search.p.rapidapi.com',
         'X-RapidAPI-Key': '8fe5f15862mshd21e36bd48c59cap1d5a95jsn5c1159de872b'
       }

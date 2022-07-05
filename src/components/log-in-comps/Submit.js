@@ -1,10 +1,25 @@
 import axios from "axios"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { Context } from "../Context"
+import { useNavigate } from "react-router-dom";
 
 export default function Submit({creatUser }) {
-    
-
+    const emailRef=useRef();
+    const passwordRef=useRef();
+    const navigate=useNavigate();
+    const getToken=()=>{
+        axios.post('http://localhost:3002/api/users/login',{
+            email:emailRef.current.value,
+            password:passwordRef.current.value
+        },
+        ).then((res)=>{
+          console.log(res.data)
+          if(res.data.token){
+            localStorage.setItem("token",res.data.token)
+           navigate('/home')
+          }
+        })
+    }
 
     const { user, setuser } = useContext(Context)
     const [users, setUsers] = useState([]);
@@ -25,15 +40,15 @@ export default function Submit({creatUser }) {
     return (
         <div className="submit">
             <div className="sub-inputs">
-                <input type='text' required='required' onChange={(e) => setUser({ email: e.target.value, password: User.password })}></input>
+                <input type='text' required='required'  ref={emailRef}></input>
                 <span>User Name</span>
             </div>
             <div className="sub-inputs">
-                <input type='text' required='required' onChange={(e) => setUser({ email: User.email, password: e.target.value })} ></input>
+                <input type='text' required='required' ref={passwordRef}  ></input>
                 <span>Password</span>
             </div>
             <div className="sub-inputs">
-                <input type='button' value='submmit' style={{ height: '3.4rem' }} onClick={()=>creatUser(check,user)} ></input>
+                <input type='button' value='submmit' style={{ height: '3.4rem' }} onClick={getToken} ></input>
             </div>
         </div>
     )
