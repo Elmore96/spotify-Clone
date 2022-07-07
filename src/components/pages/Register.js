@@ -1,9 +1,14 @@
+import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios"
 import { useContext, useEffect, useRef, useState } from "react"
 import { Context } from "../Context"
-import { Link, useNavigate } from "react-router-dom";
+import './Log-in.css'
 
-export default function Submit({creatUser }) {
+export default function Register(){
+    const usenavigate = useNavigate();
+    const goToMain = ()=>{
+      usenavigate({pathname: '/home'})
+    }
     const emailRef=useRef();
     const passwordRef=useRef();
     const navigate=useNavigate();
@@ -13,9 +18,8 @@ export default function Submit({creatUser }) {
             password:passwordRef.current.value
         },
         ).then((res)=>{
-            // debugger
           console.log(res.data)
-          if(res.data){
+          if(res.data.token){
             localStorage.setItem("token",res.data.token)
            navigate('/home')
           }
@@ -37,9 +41,20 @@ export default function Submit({creatUser }) {
             return false
         }
     }
+    
+    function creatUser(bool,state) {
+        
+    }
 
-    return (
-        <div className="submit">
+    return(
+        <div className='log-page'>
+            <div className="center">
+            <h1><u>Register</u></h1>
+            <div className="submit">
+            <div className="sub-inputs">
+                <input type='text' required='required'  ref={emailRef}></input>
+                <span>User Name</span>
+            </div>
             <div className="sub-inputs">
                 <input type='text' required='required'  ref={emailRef}></input>
                 <span>Email</span>
@@ -49,9 +64,15 @@ export default function Submit({creatUser }) {
                 <span>Password</span>
             </div>
             <div className="sub-inputs">
+                <input type='text' required='required' ref={passwordRef}  ></input>
+                <span>Confirm Password</span>
+            </div>
+            <div className="sub-inputs">
                 <input type='button' value='submmit' style={{ height: '3.4rem' }} onClick={getToken} ></input>
             </div>
-            <Link to='/register'>creat a new accunt</Link>
+            <Link to="/log-in">all ready have an accunt?</Link>
+            </div>
+            </div>
         </div>
     )
 }

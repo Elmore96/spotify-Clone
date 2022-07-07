@@ -4,9 +4,11 @@ import { Context } from './Context'
 export default function Header() {
 
   return (
+    <div className='header'>
     <div>
         <label>blaaa</label>
         <input type='text'/>
+    </div>
     </div>
   )
 }

@@ -27,10 +27,6 @@ export default function LogIn(){
             <h1><u>Log In</u></h1>
             <Submit func={enter} ></Submit>
             </div>
-            <div className="center">
-            <h1><u>Create User</u></h1>
-            <Submit  creatUser={creatUser}></Submit>
             </div>
-        </div>
     )
 }
