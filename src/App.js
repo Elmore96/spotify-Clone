@@ -1,5 +1,5 @@
 import './App.css';
-import LogIn from './components/Log-in';
+import LogIn from './components/pages/Log-in';
 import { useState, createContext } from 'react';
 import Header from './components/Header';
 import { Context } from './components/Context';
@@ -12,12 +12,12 @@ function App() {
   return (
     <div className="App">
       <Context.Provider value={{ user, setuser }}>
+        <Header />
         <Routes>
         <Route exact path='/' element={<Navigate to='/log-in'/>}/>
         <Route path='/log-in' element={<LogIn />}/>
         <Route path='/home' element={'home'}/>
         </Routes>
-        <Header />
       </Context.Provider>
       {/* <div>
       <button onClick={goToMain}> blabla</button>
