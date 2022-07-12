@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 import Header from '../Header';
+import PopUp from '../PopUp';
 import Serch from '../Serch';
 import './Home.css'
 
@@ -31,7 +32,7 @@ export default function Home() {
 
 
   return (
-    <div>
+    <div className='homePage'>
       
       <header className='search'>
         <label style={{ fontSize: '1.5rem', marginTop: '-0.2rem', marginRight: '0.4rem' }}>search</label>
@@ -50,7 +51,7 @@ export default function Home() {
               <div className='image' style={{ backgroundImage: `url(${v.thumbnail.url})`, backgroundSize: 'cover' }} ></div>
             </Link>
             <div>views: {views}</div>
-
+            <button onClick={()=> {document.querySelector('.popUpBackground').style = 'display: block;'}}>save to playlist </button>
           </div>)
         })}
       </div>
