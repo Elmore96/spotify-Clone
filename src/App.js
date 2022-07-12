@@ -15,13 +15,12 @@ function App() {
   return (
     <div className="App">
       <Context.Provider value={{ user, setuser }}>
-        <Header />
         <Routes>
         <Route exact path='/' element={<Navigate to='/log-in'/>}/>
         <Route path='/log-in' element={<LogIn />}/>
         <Route path='/register' element={<Register />}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/Song/:id' element={<Song/>}/>
+        <Route path='/home' element={<div><Home/> <Header/></div>}/>
+        <Route path='/Song/:id' element={<div> <Song/> <Header/></div>}/>
         </Routes>
       </Context.Provider>
     </div>

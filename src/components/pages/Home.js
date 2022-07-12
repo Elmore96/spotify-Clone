@@ -43,21 +43,6 @@ export default function Home() {
           let views = (v.views.toString().length > 6) ? v.views.toLocaleString().slice(-0, -8) + ' M' :
             (v.views.toString().length > 3) ? v.views.toLocaleString().slice(-0, -4) + ' K' : v.views.toLocaleString();
           let title = (v.title.length > 35) ? `${v.title.slice(0, 35)}...` : v.title;
-
-          // return (<div className='card'><a href={v.url}>
-          //   <div className='title'>{title}</div>
-          //   <div className='image' style={{backgroundImage:`url(${v.thumbnail.url})`, backgroundSize: 'cover'}} ></div>
-          //   <div>views: {views}</div>
-          //   </a>
-          //   </div>)
-          // return (<div className='card'>
-          //   <div className='title'>{title}</div>
-          //   <ReactPlayer controls width='350px' height='200px' url={v.url}>
-          //     {/* <div className='image' style={{ backgroundImage: `url(${v.thumbnail.url})`, backgroundSize: 'cover' }} ></div> */}
-          //   </ReactPlayer>
-          //   <div>views: {views}</div>
-
-          // </div>)
           return (<div key={v.id} className='card'>
             
             <div className='title'>{title}</div>

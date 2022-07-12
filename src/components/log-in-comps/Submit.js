@@ -13,10 +13,9 @@ export default function Submit({creatUser }) {
             password:passwordRef.current.value
         },
         ).then((res)=>{
-            // debugger
           console.log(res.data)
           if(res.data){
-            localStorage.setItem("token",res.data.token)
+           localStorage.setItem("token",res.data)
            navigate('/home')
           }
         })

@@ -11,16 +11,19 @@ export default function Register(){
     }
     const emailRef=useRef();
     const passwordRef=useRef();
+    const userNameRef= useRef();
+    const passwordConfRef= useRef()
     const navigate=useNavigate();
     const getToken=()=>{
-        axios.post('http://localhost:3002/api/users/login',{
-            email:emailRef.current.value,
-            password:passwordRef.current.value
+        axios.post('http://localhost:3002/api/users/register',{
+            userName: userNameRef.current.value,
+            email: emailRef.current.value,
+            password: passwordRef.current.value
         },
         ).then((res)=>{
           console.log(res.data)
-          if(res.data.token){
-            localStorage.setItem("token",res.data.token)
+          if(res.data){
+           localStorage.setItem("token",res.data)
            navigate('/home')
           }
         })
@@ -41,10 +44,6 @@ export default function Register(){
             return false
         }
     }
-    
-    function creatUser(bool,state) {
-        
-    }
 
     return(
         <div className='log-page'>
@@ -52,7 +51,7 @@ export default function Register(){
             <h1><u>Register</u></h1>
             <div className="submit">
             <div className="sub-inputs">
-                <input type='text' required='required'  ref={emailRef}></input>
+                <input type='text' required='required'  ref={userNameRef}></input>
                 <span>User Name</span>
             </div>
             <div className="sub-inputs">
@@ -64,7 +63,7 @@ export default function Register(){
                 <span>Password</span>
             </div>
             <div className="sub-inputs">
-                <input type='text' required='required' ref={passwordRef}  ></input>
+                <input type='text' required='required' ref={passwordConfRef}  ></input>
                 <span>Confirm Password</span>
             </div>
             <div className="sub-inputs">
