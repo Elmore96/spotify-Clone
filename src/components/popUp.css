@@ -1,0 +1,13 @@
+.popUpBackground{
+    display: none;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.648);
+    width: 100%;
+    height: 100%;
+}
+.popUpWindow{
+    width: 7rem;
+    height: 7rem;
+    background: white;
+}

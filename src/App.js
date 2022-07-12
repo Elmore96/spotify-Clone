@@ -7,6 +7,7 @@ import LogIn from './components/pages/Log-in';
 import Register from './components/pages/Register';
 import Home from './components/pages/Home';
 import Song from './components/pages/Song';
+import PopUp from './components/PopUp';
 
 
 function App() {
@@ -15,12 +16,12 @@ function App() {
   return (
     <div className="App">
       <Context.Provider value={{ user, setuser }}>
-        <Header />
+        {/* <Header /> */}
         <Routes>
         <Route exact path='/' element={<Navigate to='/log-in'/>}/>
         <Route path='/log-in' element={<LogIn />}/>
         <Route path='/register' element={<Register />}/>
-        <Route path='/home' element={<Home/>}/>
+        <Route path='/home' element={<div><Home/><PopUp/></div>}/>
         <Route path='/Song/:id' element={<Song/>}/>
         </Routes>
       </Context.Provider>
