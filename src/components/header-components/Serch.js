@@ -1,11 +1,11 @@
-import React from 'react'
-
-export default function Serch({main,setMain,serch,setSerch}) {
-    // const [serch, setSerch] = useState('')
-    // const [main, setMain] = useState([])
+import React, { useState } from 'react'
 
 
+export default function SerchBar({main,setMain}) {
+    const [serch, setSerch] = useState('')
+    
     function Serching() {
+                
         const options = {
             method: 'GET',
             headers: {

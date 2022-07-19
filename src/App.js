@@ -20,7 +20,7 @@ function App() {
         <Route exact path='/' element={<Navigate to='/log-in'/>}/>
         <Route path='/log-in' element={<LogIn />}/>
         <Route path='/register' element={<Register />}/>
-        <Route path='/home' element={<div><Home/> <Header/> <PopUp/></div>}/>
+        <Route path='/home' element={<div><Home/><PopUp/></div>}/>
         <Route path='/Song/:id' element={<div> <Song/> <Header/>  <PopUp/></div>}/>
         </Routes>
       </Context.Provider>

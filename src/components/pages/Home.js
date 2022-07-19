@@ -3,42 +3,41 @@ import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 import Header from '../Header';
 import PopUp from '../PopUp';
-import Serch from '../Serch';
 import './Home.css'
 
 export default function Home() {
 
-  const [serch, setSerch] = useState('')
+  // const [serch, setSerch] = useState('')
   const [main, setMain] = useState([])
 
 
-  function Serching() {
-    const options = {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')} `,
-        'X-RapidAPI-Host': 'simple-youtube-search.p.rapidapi.com',
-        'X-RapidAPI-Key': '8fe5f15862mshd21e36bd48c59cap1d5a95jsn5c1159de872b'
-      }
-    };
+  // function Serching() {
+  //   const options = {
+  //     method: 'GET',
+  //     headers: {
+  //       'Authorization': `Bearer ${localStorage.getItem('token')} `,
+  //       'X-RapidAPI-Host': 'simple-youtube-search.p.rapidapi.com',
+  //       'X-RapidAPI-Key': '8fe5f15862mshd21e36bd48c59cap1d5a95jsn5c1159de872b'
+  //     }
+  //   };
 
-    let res = serch.split(' ').join('%2B')
+  //   let res = serch.split(' ').join('%2B')
 
-    fetch('https://simple-youtube-search.p.rapidapi.com/search?query=' + res, options)
-      .then(response => response.json())
-      .then(response => { console.log(response.results); setMain(response.results) })
-      .catch(err => console.error(err))
-  }
+  //   fetch('https://simple-youtube-search.p.rapidapi.com/search?query=' + res, options)
+  //     .then(response => response.json())
+  //     .then(response => { console.log(response.results); setMain(response.results) })
+  //     .catch(err => console.error(err))
+  // }
 
 
   return (
     <div className='homePage'>
-      
-      <header className='search'>
+        <Header setMain={setMain}/>
+      {/* <header className='search'>
         <label style={{ fontSize: '1.5rem', marginTop: '-0.2rem', marginRight: '0.4rem' }}>search</label>
         <input type='text' style={{ height: '1.5rem', fontSize: '1.3rem', fontFamily: 'serif' }} onChange={(e) => setSerch(e.target.value)} />
         <button style={{ fontSize: '1.3rem', marginLeft: '0.4rem' }} onClick={Serching}>click</button>
-      </header>
+      </header> */}
       <div className='container'>
         {main.map(v => {
           let views = (v.views.toString().length > 6) ? v.views.toLocaleString().slice(-0, -8) + ' M' :

@@ -1,0 +1,19 @@
+
+.header{
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    left: -1.3rem;
+    background-color: cadetblue;
+    user-select: none;
+}
+
+.search{
+    position: relative;
+    top: 0.4rem;
+    left: 4rem;
+    height: 2rem;
+    width: fit-content;
+    margin-left: 2rem;
+    z-index: 3;
+}
