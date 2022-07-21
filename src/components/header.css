@@ -4,6 +4,7 @@
     position: fixed;
     top: 0;
     left: -1.3rem;
+    z-index: 1;
     background-color: cadetblue;
     user-select: none;
 }
@@ -15,5 +16,5 @@
     height: 2rem;
     width: fit-content;
     margin-left: 2rem;
-    z-index: 3;
+    z-index: 10;
 }

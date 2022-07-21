@@ -9,7 +9,6 @@
 
 .droplist {
   display: none;
-  height: 100vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -45,7 +44,7 @@ body {
   width: 23em;
   transform: translateX(200px) translateY(-200px);
   transition: transform 300ms;
-  z-index: 2;
+  z-index: 5;
 }
 
 .pie-color:hover {
@@ -140,7 +139,7 @@ body {
   position: absolute;
   top: -6em;
   width: 11em;
-  z-index: 3;
+  z-index: 10;
 }
 
 .hamburger {
@@ -222,7 +221,7 @@ body {
   font-size: 5em;
   color: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  z-index: 1;
+  z-index: 3;
   opacity: 0;
   font-weight: 900;
   text-transform: uppercase;
