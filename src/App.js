@@ -15,10 +15,9 @@ function App() {
     <div className="App">
       <Context.Provider value={{ user, setuser }}>
         <Routes>
-        <Route exact path= '/spotify-Clone' element={<Navigate to='/spotify-Clone/log-in'/>}/>
-        <Route exact path='/' element={<Navigate to='/spotify-Clone/log-in'/>}/>
-        <Route path='/spotify-Clone/log-in' element={<LogIn />}/>
-        <Route path='/spotify-Clone/home' element={<Home/>}/>
+        <Route exact path='/' element={<Navigate to='/log-in'/>}/>
+        <Route path='/log-in' element={<LogIn />}/>
+        <Route path='/home' element={<Home/>}/>
         </Routes>
         {/* <Header /> */}
       </Context.Provider>
